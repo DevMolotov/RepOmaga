@@ -1,10 +1,14 @@
-"use client";
+'use client';
 
-import Navbar from "@/components/navBar";
-import Footer from "@/components/footer";
-import { useEffect, useState } from "react";
+import Navbar from '@/components/navBar';
+import Footer from '@/components/footer';
+import { useEffect, useState } from 'react';
 
-export default function DetalhesProjeto({ params }: { params: { slug: string } }) {
+export default function DetalhesProjeto({
+  params,
+}: {
+  params: { slug: string };
+}) {
   interface Projeto {
     id: number;
     title: string;
@@ -16,9 +20,11 @@ export default function DetalhesProjeto({ params }: { params: { slug: string } }
 
   useEffect(() => {
     async function fetchProjeto() {
-      const res = await fetch("/api/projetos");
+      const res = await fetch('/api/projetos');
       const data = await res.json();
-      const projetoEncontrado = data.find((p: Projeto) => p.slug === params.slug);
+      const projetoEncontrado = data.find(
+        (p: Projeto) => p.slug === params.slug
+      );
       setProjeto(projetoEncontrado);
     }
 
@@ -30,11 +36,11 @@ export default function DetalhesProjeto({ params }: { params: { slug: string } }
   }
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className='flex min-h-screen flex-col'>
       <Navbar />
-      <main className="flex-grow p-6">
-        <h1 className="text-2xl font-bold mb-4">{projeto.title}</h1>
-        <p className="text-lg">{projeto.description}</p>
+      <main className='flex-grow p-6'>
+        <h1 className='mb-4 text-2xl font-bold'>{projeto.title}</h1>
+        <p className='text-lg'>{projeto.description}</p>
       </main>
       <Footer />
     </div>
