@@ -1,5 +1,6 @@
 import '../styles/animations.css';
 import Container from '../components/Container';
+import Container2 from '../components/Container2';
 
 export default function Home() {
   return (
@@ -71,12 +72,9 @@ export default function Home() {
 
       {/* Container Inferior (Esquerda) */}
       <div className='animate-fadeIn mb-8 flex w-full justify-start'>
-        <Container
-          imageSrc='/images/right-image.jpeg'
-          altText='Imagem inferior'
-        >
-          <p className='text-left break-words'>Este é o container inferior.</p>
-        </Container>
+        <Container2 imageSrc='/Curiosidade.jpeg' altText='Imagem inferior'>
+          <p className='text-left break-words'>Curiosidade.</p>
+        </Container2>
       </div>
     </div>
   );

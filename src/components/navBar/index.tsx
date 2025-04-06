@@ -16,7 +16,11 @@ const Navbar: React.FC = () => {
       <div className='flex items-center space-x-4'>
         <motion.button
           className='flex h-10 w-10 items-center justify-center rounded-full bg-gray-700 focus:outline-none'
-          onClick={() => alert('Você encontrou um easter egg! 🎉')}
+          onClick={() =>
+            alert(
+              'Você encontrou um easter egg! T2xoYSwgbsOjbyBzb3UgYm9tIGNvbSB0ZXh0aW5ob3MgbWFzIHZhbW9zIGzDoSBwcmltZWlyYW1lbnRlIGdvc3RhcmlhIGRlIGRpemVyIHBvciBtaW0gZSBjcmVpbyBxdWUgcG9yIHRvZG9zIG9zIHRyYWluZWVzIGRlIHRlYywgbXVpdG8gb2JyaWdhZG8gcG9yIHR1ZG8gcXVlIG5vcyBwcm9wb3JjaW9uYXJhbSBhdMOpIGFnb3JhIG5lc3RlIHByb2Nlc3NvIGRlIFRyYWluZWUsIHRvZG9zIG9zIGVuc2luYW1lbnRvcyBxdWUgbm9zIGZvcmFtIHBhc3NhZG9zIGRhcsOjbyBubyBmdXR1cm8sIGZydXRvcyB0YW50byBwYXJhIGEgRUpFTSB0YW50byBwYXJhIG7Ds3MgbWVzbW9zLCB2b2PDqnMgZmF6ZW0gcGFydGUgZGVzdGEgbm9zc2Egam9ybmFkYSBkZSBhcHJlbmRpemFkby4gKERlc2N1bHBhIGZhemVyIGVtIGJhc2U2NCBhY2hvIGZvaSBvIHF1ZSB2ZWlvIG5hIG1pbmhhIG1lbnRlIGtra2traykuCnBzOiBnb3N0YXJpYSBkZSBkaXplciBxdWUgZXN0b3UgZGUgbHV0byBwZWxvIGZpbmFkbyBUaG9tw6FzIG91IHBhcmEgb3MgbWFpcyDDrW50aW1vcywgVHJpY8O0LgpQcm92IDQ6NSBQcm9jdXJlIG9idGVyIHNhYmVkb3JpYSBlIGVudGVuZGltZW50byBuw6NvIHNlIGVzcXVlw6dhIGRhcyBtaW5oYXMgcGFsYXZyYXMgbmVtIGRlbGFzIHNlIGFmYXN0ZS4='
+            )
+          }
           whileHover={{ scale: 1.2 }} // Animação ao passar o mouse
           whileTap={{ scale: 0.9 }} // Animação ao clicar
         >
