@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import '../styles/animations.css';
 import { useState } from 'react';
@@ -30,14 +30,20 @@ export default function Home() {
       {/* Linha com Carrossel Médio e Container Central */}
       <div className='flex w-full'>
         {/* Carrossel Médio */}
-        <div className='animate-fadeIn flex w-1/2 h-60 justify-start mr-112 ml-8'>
-          <div className='flex w-full overflow-x-auto space-x-4 p-4 bg-gray-800 rounded-lg'>
-            {['/cam.jpeg', '/Trainees.jpeg', '/Foto  perfil.jpeg', '/namorada.jpeg', '/py.jpeg'].map((src, index) => (
+        <div className='animate-fadeIn mr-112 ml-8 flex h-60 w-1/2 justify-start'>
+          <div className='flex w-full space-x-4 overflow-x-auto rounded-lg bg-gray-800 p-4'>
+            {[
+              '/cam.jpeg',
+              '/Trainees.jpeg',
+              '/Foto  perfil.jpeg',
+              '/namorada.jpeg',
+              '/py.jpeg',
+            ].map((src, index) => (
               <img
                 key={index}
                 src={src}
                 alt={`Foto ${index + 1}`}
-                className='h-40 w-40 rounded-lg object-cover transition-transform duration-300 hover:scale-105 cursor-pointer'
+                className='h-40 w-40 cursor-pointer rounded-lg object-cover transition-transform duration-300 hover:scale-105'
                 onClick={() => handleImageClick(src)}
               />
             ))}
@@ -46,7 +52,7 @@ export default function Home() {
 
         {/* Container Central (Direita) */}
         <div className='animate-fadeIn flex w-1/4 justify-end'>
-          <div className='ml-20 mr-8 h-auto rounded-lg bg-red-900 p-6 text-white'>
+          <div className='mr-8 ml-20 h-auto rounded-lg bg-red-900 p-6 text-white'>
             {/* Caixa de Texto */}
             <div className='col-span-2 mb-4 flex items-center justify-center rounded-lg bg-red-800 p-4 text-white'>
               <p className='text-center font-semibold'>
@@ -106,7 +112,7 @@ export default function Home() {
       {/* Modal para exibir imagem expandida */}
       {selectedImage && (
         <div
-          className='fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75'
+          className='bg-opacity-75 fixed inset-0 z-50 flex items-center justify-center bg-black'
           onClick={closeModal}
         >
           <img

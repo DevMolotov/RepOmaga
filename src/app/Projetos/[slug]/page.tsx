@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import { Projeto } from '@/types/projetos';
 import projetosData from '@/data/projetos.json';
 import { notFound } from 'next/navigation';
@@ -19,7 +19,9 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const handleImageClick = (image: string) => {
     expandedImage = image;
     const modal = document.getElementById('modal');
-    const modalImage = document.getElementById('modal-image') as HTMLImageElement;
+    const modalImage = document.getElementById(
+      'modal-image'
+    ) as HTMLImageElement;
 
     if (modal && modalImage) {
       modalImage.src = expandedImage;
@@ -40,7 +42,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
   return (
     <div className='flex min-h-screen'>
       {/* Container Grande Lateral Esquerda */}
-      <aside className='w-1/4 bg-gray-800 p-6 text-white animate-slideInLeft'>
+      <aside className='animate-slideInLeft w-1/4 bg-gray-800 p-6 text-white'>
         <h2 className='mb-4 text-xl font-bold'>Detalhes do Projeto</h2>
         <p className='mb-2'>Cliente: {projeto.client}</p>
         <p className='mb-2'>Data: {projeto.date}</p>
@@ -48,21 +50,21 @@ export default async function Page({ params }: { params: { slug: string } }) {
       </aside>
 
       {/* Conteúdo Central */}
-      <main className='flex-grow p-6 animate-fadeIn'>
+      <main className='animate-fadeIn flex-grow p-6'>
         <h1 className='mb-4 text-2xl font-bold'>{projeto.title}</h1>
-        <p className='text-lg text-left'>{projeto.description}</p>
-        <p className='text-lg text-left'>{projeto.detailedDescription}</p>
+        <p className='text-left text-lg'>{projeto.description}</p>
+        <p className='text-left text-lg'>{projeto.detailedDescription}</p>
       </main>
 
       {/* Pilha de Imagens na Direita */}
-      <aside className='w-1/4 h-auto p-6 animate-slideInRight'>
+      <aside className='animate-slideInRight h-auto w-1/4 p-6'>
         <div className='space-y-4'>
           {projeto.images?.map((image, index) => (
             <img
               key={index}
               src={image}
               alt={`Imagem ${index + 1}`}
-              className='h-40 w-full rounded-lg object-cover cursor-pointer transition-transform duration-300 hover:scale-105'
+              className='h-40 w-full cursor-pointer rounded-lg object-cover transition-transform duration-300 hover:scale-105'
               onClick={() => handleImageClick(image)}
             />
           ))}
@@ -72,13 +74,13 @@ export default async function Page({ params }: { params: { slug: string } }) {
       {/* Modal para exibir imagem expandida */}
       <div
         id='modal'
-        className='fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-75'
+        className='bg-opacity-75 fixed inset-0 z-50 hidden items-center justify-center bg-black'
         onClick={closeModal}
       >
         <img
           id='modal-image'
           alt='Imagem expandida'
-          className='max-h-full max-w-full rounded-lg animate-zoomIn'
+          className='animate-zoomIn max-h-full max-w-full rounded-lg'
         />
       </div>
     </div>
