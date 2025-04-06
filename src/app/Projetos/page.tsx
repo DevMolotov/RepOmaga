@@ -1,19 +1,18 @@
 'use client';
 
-import Navbar from '@/components/navBar';
-import Footer from '@/components/footer';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
-export default function Projetos() {
-  interface Projeto {
-    id: number;
-    title: string;
-    description: string;
-    slug: string;
-  }
+interface Projeto {
+  id: number;
+  title: string;
+  description: string;
+  slug: string;
+}
 
+export default function Projetos() {
   const [projetos, setProjetos] = useState<Projeto[]>([]);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     async function fetchProjetos() {
@@ -26,15 +25,23 @@ export default function Projetos() {
         setProjetos(data);
       } catch (error) {
         console.error(error);
+        setError('Não foi possível carregar os projetos.');
       }
     }
 
     fetchProjetos();
   }, []);
 
+  if (error) {
+    return (
+      <div className='p-6'>
+        <p className='text-red-500'>{error}</p>
+      </div>
+    );
+  }
+
   return (
-    <div className='flex min-h-screen flex-col'>
-      <Navbar />
+    <div className='flex min-h-screen flex-col space-y-8 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 pt-10'>
       <main className='flex-grow'>
         <div className='p-6'>
           <h1 className='mb-4 text-2xl font-bold'>Projetos</h1>
@@ -48,7 +55,6 @@ export default function Projetos() {
           ))}
         </div>
       </main>
-      <Footer />
     </div>
   );
 }

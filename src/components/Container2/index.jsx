@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Container = ({ imageSrc, altText, children, className = '' }) => {
+const Container2 = ({ imageSrc, altText, children, className = '' }) => {
   return (
     <div
       className={`ml-8 max-w-4xl rounded-lg bg-red-900 px-6 py-8 text-white ${className}`}
@@ -15,10 +15,11 @@ const Container = ({ imageSrc, altText, children, className = '' }) => {
         </div>
         <div className='textbox max-w-lg rounded-lg bg-red-800 p-4 text-white'>
           <p className='break-words whitespace-pre-wrap'>
-            Olá meu nome é Matheus Pasquevitz Souza tenho 18 anos e faço parte
-            do programa de Trainee da EJEM, este é meu portifólio onde poderá
-            encontrar alguns projetos que já fiz ou participei e outras
-            curiosidades sobre minha pessoa.
+            Além da mecânica e da programação, sempre fui apaixonado por música
+            desde pequeno meu primeiro instrumento foi uma bateria que quebrei
+            no primeiro dia que estava em minhas mãos(Era de brinquedo) hoje
+            toco 7 instrumentos desde instrumentos clássicos até alguns mais
+            populares utilzados em gêneros como MPB e samba.
           </p>
         </div>
       </div>
@@ -27,4 +28,4 @@ const Container = ({ imageSrc, altText, children, className = '' }) => {
   );
 };
 
-export default Container;
+export default Container2;
