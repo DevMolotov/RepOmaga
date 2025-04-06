@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion'; // Importa o Framer Motion
+import { FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa'; // Importa os ícones
 
 const Footer: React.FC = () => {
   return (
@@ -27,28 +28,34 @@ const Footer: React.FC = () => {
           transition={{ duration: 0.5, delay: 0.2 }} // Duração e atraso da animação
         >
           <motion.a
-            href='/sobre'
-            className='hover:underline'
-            whileHover={{ scale: 1.1, rotate: 3 }} // Aumenta e gira ao passar o mouse
+            href='https://www.instagram.com/pasquevitz?igsh=dXZqeWt3a2hyc2tr'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='hover:text-gray-300'
+            whileHover={{ scale: 1.2, rotate: 5 }} // Aumenta e gira ao passar o mouse
             whileTap={{ scale: 0.9 }} // Reduz o tamanho ao clicar
           >
-            Sobre
+            <FaInstagram size={24} />
           </motion.a>
           <motion.a
-            href='/contato'
-            className='hover:underline'
-            whileHover={{ scale: 1.1, rotate: 3 }} // Aumenta e gira ao passar o mouse
+            href='https://www.linkedin.com/in/matheus-pasquevitz-b37a20278/'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='hover:text-gray-300'
+            whileHover={{ scale: 1.2, rotate: 5 }} // Aumenta e gira ao passar o mouse
             whileTap={{ scale: 0.9 }} // Reduz o tamanho ao clicar
           >
-            Contato
+            <FaLinkedin size={24} />
           </motion.a>
           <motion.a
-            href='/privacidade'
-            className='hover:underline'
-            whileHover={{ scale: 1.1, rotate: 3 }} // Aumenta e gira ao passar o mouse
+            href='https://github.com/DevMolotov'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='hover:text-gray-300'
+            whileHover={{ scale: 1.2, rotate: 5 }} // Aumenta e gira ao passar o mouse
             whileTap={{ scale: 0.9 }} // Reduz o tamanho ao clicar
           >
-            Privacidade
+            <FaGithub size={24} />
           </motion.a>
         </motion.nav>
       </div>
