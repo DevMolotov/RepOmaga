@@ -1,45 +1,9 @@
-'use client';
-
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { Projeto } from '@/types/projetos';
+import projetosData from '@/data/projetos.json';
 
-interface Projeto {
-  id: number;
-  title: string;
-  description: string;
-  slug: string;
-}
-
-export default function Projetos() {
-  const [projetos, setProjetos] = useState<Projeto[]>([]);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    async function fetchProjetos() {
-      try {
-        const res = await fetch('/api/projetos');
-        if (!res.ok) {
-          throw new Error('Erro ao buscar os projetos');
-        }
-        const data = await res.json();
-        setProjetos(data);
-      } catch (error) {
-        console.error(error);
-        setError('Não foi possível carregar os projetos.');
-      }
-    }
-
-    fetchProjetos();
-  }, []);
-
-  if (error) {
-    return (
-      <div className='p-6'>
-        <p className='text-red-500'>{error}</p>
-      </div>
-    );
-  }
-
+const projetos = projetosData as Projeto[];
+export default function ProjetosPage() {
   return (
     <div className='flex min-h-screen flex-col'>
       <main className='flex-grow'>
