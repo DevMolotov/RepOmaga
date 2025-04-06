@@ -26,7 +26,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='pt-BR'>
-      <body className='from-black-900 to-white-800 min-h-screen bg-gradient-to-r via-gray-900 text-white'>
+      <body className='bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 min-h-screen text-white'>
         <Navbar />
         <main className='flex-grow'>{children}</main>
         <Footer />

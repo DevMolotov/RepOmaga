@@ -5,7 +5,7 @@ import projetosData from '@/data/projetos.json';
 const projetos = projetosData as Projeto[];
 export default function ProjetosPage() {
   return (
-    <div className='flex min-h-screen flex-col'>
+    <div className='bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 flex min-h-screen flex-col'>
       <main className='flex-grow'>
         <div className='p-6'>
           <h1 className='mb-4 text-2xl font-bold'>Projetos</h1>

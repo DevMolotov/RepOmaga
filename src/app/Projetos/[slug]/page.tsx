@@ -40,7 +40,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
   };
 
   return (
-    <div className='flex min-h-screen'>
+    <div className='bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 flex min-h-screen'>
       {/* Container Grande Lateral Esquerda */}
       <aside className='animate-slideInLeft w-1/4 bg-gray-800 p-6 text-white'>
         <h2 className='mb-4 text-xl font-bold'>Detalhes do Projeto</h2>
