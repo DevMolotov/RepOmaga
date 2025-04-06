@@ -1,5 +1,8 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+Portifólio do Trainee Matheus Pasquevitz Souza do setor de tecnologia da EJEM
+para iniciar uma visualização do projeto digite o seguinte comando: npm run dev
+
 ## Getting Started
 
 First, run the development server:
