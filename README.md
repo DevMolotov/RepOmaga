@@ -1,7 +1,11 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Portifólio do Trainee Matheus Pasquevitz Souza
 
-Portifólio do Trainee Matheus Pasquevitz Souza do setor de tecnologia da EJEM
-para iniciar uma visualização do projeto digite o seguinte comando: npm run dev
+Este foi um portfólio criado por mim enquanto estava no programa de Trainee da EJEM utilizando CSS Tailwind, JavaScript e TypeScript
+Neste portifólio contém informações minhas de contato e alguns projetos que já fiz ou estou fazendo no momento.
+
+Obs* Ainda não está 100% completo irei continuar atualizando após a entrega do Case.
+
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
 
