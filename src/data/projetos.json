@@ -23,7 +23,7 @@
     "description": "Desenvolvimento de um projeto de um carro autônomo utilizando o Arduino.",
     "detailedDescription": "Este projeto focou na criação de um carro autônomo capaz de navegar por um ambiente sem intervenção humana. Utilizamos sensores ultrassônicos para detectar obstáculos e algoritmos de controle para ajustar a direção e velocidade do carro, que inclusive fomos prestigiados com o 1º lugar na competição de robótica da Fundação Bradesco-Jardim Conceição.",
     "slug": "projeto-02",
-    "images": ["/PESQ2025.jpeg", "/images/projeto-02-2.jpg"]
+    "images": ["/PESQ2025.jpeg", "/wall-epesq.jpeg"]
   },
   {
     "id": 3,
@@ -65,7 +65,7 @@
     "id": 6,
     "client": "Setor de Tecnologia EJEM",
     "date": "06-04-2025",
-    "status": "Concluído",
+    "status": "Em andamento",
 
     "title": "Projeto 06 Case-03",
     "description": "Criação de um portifólio utilizando Next.js e Tailwind CSS (Que coincidência, esse é o projeto!!).",

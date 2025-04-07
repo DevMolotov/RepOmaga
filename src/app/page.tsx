@@ -27,9 +27,9 @@ export default function Home() {
         </Container>
       </div>
 
-      {/* Linha com Carrossel Médio e Container Central */}
+      {/* Linha com Carrossel e Container Central */}
       <div className='flex w-full'>
-        {/* Carrossel Médio */}
+        {/* Carrossel */}
         <div className='animate-fadeIn mr-112 ml-8 flex h-60 w-1/2 justify-start'>
           <div className='flex w-full space-x-4 overflow-x-auto rounded-lg bg-gray-800 p-4'>
             {[
@@ -126,7 +126,7 @@ export default function Home() {
       {/* Container Inferior (Esquerda) */}
       <div className='animate-fadeIn mb-8 flex w-full justify-start'>
         <Container2 imageSrc='/Curiosidade.jpeg' altText='Imagem inferior'>
-          <p className='text-left break-words'>Curiosidade.</p>
+          <p className='text-left break-words'>"Os que dançavam foram julgados loucos pelos que não podiam ouvir a música" -Friedrich Nietzsche.</p>
         </Container2>
       </div>
     </div>
