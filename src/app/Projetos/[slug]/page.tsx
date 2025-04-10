@@ -1,33 +1,27 @@
-import Link from 'next/link';
 import { Projeto } from '@/types/projetos';
 import projetosData from '@/data/projetos.json';
+import { notFound } from 'next/navigation';
+import ProjetosContent from './ProjetosContent';
 
 // Importa o tipo 'Projeto' e os dados dos projetos do arquivo JSON.
 const projetos = projetosData as Projeto[];
 
-// Componente funcional para a página de Projetos.
-export default function ProjetosPage() {
-  return (
-    <div className='bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 flex min-h-screen flex-col'>
-      {/* Elemento principal da página que ocupa o espaço restante na tela. */}
-      <main className='flex-grow'>
-        <div className='p-6'>
-          {/* Título da seção de projetos */}
-          <h1 className='mb-4 text-2xl font-bold'>Projetos</h1>
-          {/* Mapeamento do array de projetos para renderizar cada projeto como um link */}
-          {projetos.map((projeto) => (
-            <Link key={projeto.id} href={`/projetos/${projeto.slug}`}>
-              {/* Div estilizada para cada projeto, funcionando como um cartão clicável */}
-              <div className='mb-4 cursor-pointer rounded-lg bg-red-900 p-4 text-white hover:bg-red-800'>
-                {/* Título do projeto */}
-                <h2 className='text-lg font-semibold'>{projeto.title}</h2>
-                {/* Descrição breve do projeto */}
-                <p className='text-sm'>{projeto.description}</p>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </main>
-    </div>
-  );
+// Componente assíncrono para a página de detalhes de um projeto específico.
+// Recebe os parâmetros da rota, incluindo o 'slug' do projeto.
+export default async function Page({ params }: { params: { slug: string } }) {
+  // Aguarda a resolução da promessa dos parâmetros da rota.
+  const param = await params;
+
+  // Procura no array de projetos um projeto cujo 'slug' corresponda ao 'slug' recebido nos parâmetros.
+  const projeto = projetos.find((p) => p.slug === param.slug);
+
+  // Se nenhum projeto com o 'slug' correspondente for encontrado, a função 'notFound()' do Next.js é chamada,
+  // o que renderiza uma página de erro 404.
+  if (!projeto) {
+    notFound();
+  }
+
+  // Se um projeto for encontrado, o componente 'ProjetosContent' é renderizado,
+  // passando o objeto do projeto encontrado como uma prop chamada 'projeto'.
+  return <ProjetosContent projeto={projeto} />;
 }
