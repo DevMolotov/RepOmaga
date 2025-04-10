@@ -1,12 +1,14 @@
+/* Define uma animação chamada 'fadeIn' que faz a opacidade ir de 0 a 1 */
 @keyframes fadeIn {
   from {
-    opacity: 0;
+    opacity: 0; /* Início: completamente transparente */
   }
   to {
-    opacity: 1;
+    opacity: 1; /* Fim: totalmente visível */
   }
 }
 
+/* Classe utilitária que aplica a animação 'fadeIn' */
 .animate-fadeIn {
-  animation: fadeIn 1s ease-in-out;
+  animation: fadeIn 1s ease-in-out; /* Duração de 1s com transição suave */
 }

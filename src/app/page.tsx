@@ -6,19 +6,22 @@ import Container from '../components/Container';
 import Container2 from '../components/Container2';
 
 export default function Home() {
+  // Estado para armazenar a URL da imagem selecionada para exibição no modal. Inicialmente é nulo.
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
+  // Função que é chamada quando uma imagem do carrossel é clicada. Define a URL da imagem no estado `selectedImage`.
   const handleImageClick = (src: string) => {
     setSelectedImage(src);
   };
 
+  // Função para fechar o modal de imagem ampliada. Define o estado `selectedImage` de volta para nulo.
   const closeModal = () => {
     setSelectedImage(null);
   };
 
   return (
     <div className='flex min-h-screen flex-col space-y-8 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 pt-10'>
-      {/* Container Superior (Esquerda) */}
+      {/* Container superior alinhado à esquerda */}
       <div className='animate-fadeIn flex w-full justify-start'>
         <Container imageSrc='/Fotoperfil.jpeg' altText='Foto de perfil'>
           <p className='text-left break-words'>
@@ -27,11 +30,12 @@ export default function Home() {
         </Container>
       </div>
 
-      {/* Linha com Carrossel e Container Central */}
+      {/* Container que engloba o carrossel de imagens e o container central */}
       <div className='flex w-full'>
-        {/* Carrossel */}
+        {/* Carrossel de imagens com rolagem horizontal */}
         <div className='animate-fadeIn mr-112 ml-8 flex h-60 w-1/2 justify-start'>
           <div className='flex w-full space-x-4 overflow-x-auto rounded-lg bg-gray-800 p-4'>
+            {/* Mapeamento do array de URLs de imagens para renderizar cada imagem */}
             {[
               '/cam.jpeg',
               '/Trainees.jpeg',
@@ -44,23 +48,25 @@ export default function Home() {
                 src={src}
                 alt={`Foto ${index + 1}`}
                 className='h-40 w-40 cursor-pointer rounded-lg object-cover transition-transform duration-300 hover:scale-105'
+                // Evento de clique para exibir a imagem em tamanho maior
                 onClick={() => handleImageClick(src)}
               />
             ))}
           </div>
         </div>
 
-        {/* Container Central (Direita) */}
+        {/* Container central alinhado à direita, exibindo informações dos colegas */}
         <div className='animate-fadeIn flex w-1/4 justify-end'>
           <div className='mr-8 ml-20 h-auto rounded-lg bg-red-900 p-6 text-white'>
-            {/* Caixa de Texto */}
+            {/* Título da seção de colegas do Case 01 */}
             <div className='col-span-2 mb-4 flex items-center justify-center rounded-lg bg-red-800 p-4 text-white'>
               <p className='text-center font-semibold'>
                 Colegas de projeto Case 01
               </p>
             </div>
+            {/* Grid para organizar as informações dos colegas */}
             <div className='grid grid-cols-2 items-center gap-4'>
-              {/* Container Interno 1 */}
+              {/* Container para exibir informações de Thomas Barbosa */}
               <div className='flex flex-col items-center rounded-lg bg-red-800 p-4 text-white'>
                 <img
                   src='/thomas.jpeg'
@@ -69,7 +75,7 @@ export default function Home() {
                 />
                 <p className='text-center font-semibold'>Thomas Barbosa</p>
               </div>
-              {/* Container Interno 2 */}
+              {/* Container para exibir informações de Vinícius Santana */}
               <div className='flex flex-col items-center rounded-lg bg-red-800 p-4 text-white'>
                 <img
                   src='/vinicius.jpeg'
@@ -78,13 +84,13 @@ export default function Home() {
                 />
                 <p className='text-center font-semibold'>Vinícius Santana</p>
               </div>
-              {/* Caixa de Texto */}
+              {/* Título da seção de colegas do Case 02 */}
               <div className='col-span-2 flex items-center justify-center rounded-lg bg-red-800 p-4 text-white'>
                 <p className='text-center font-semibold'>
                   Colegas de projeto Case 02
                 </p>
               </div>
-              {/* Container Interno 3 */}
+              {/* Container para exibir informações de Ana Julia Palmisciano */}
               <div className='flex flex-col items-center rounded-lg bg-red-800 p-4 text-white'>
                 <img
                   src='/ana.jpeg'
@@ -95,7 +101,7 @@ export default function Home() {
                   Ana Julia Palmisciano
                 </p>
               </div>
-              {/* Container Interno 4 */}
+              {/* Container para exibir informações de Vitor Hashimoto */}
               <div className='flex flex-col items-center rounded-lg bg-red-800 p-4 text-white'>
                 <img
                   src='/hashimoto.jpeg'
@@ -109,10 +115,11 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Modal para exibir imagem expandida */}
+      {/* Modal condicionalmente renderizado para exibir a imagem em tamanho maior */}
       {selectedImage && (
         <div
           className='bg-opacity-75 fixed inset-0 z-50 flex items-center justify-center bg-black'
+          // Evento de clique no fundo do modal para fechar o modal
           onClick={closeModal}
         >
           <img
@@ -123,7 +130,7 @@ export default function Home() {
         </div>
       )}
 
-      {/* Container Inferior (Esquerda) */}
+      {/* Container inferior alinhado à esquerda */}
       <div className='animate-fadeIn mb-8 flex w-full justify-start'>
         <Container2 imageSrc='/Curiosidade.jpeg' altText='Imagem inferior'>
           <p className='text-left break-words'>"Os que dançavam foram julgados loucos pelos que não podiam ouvir a música" -Friedrich Nietzsche.</p>
