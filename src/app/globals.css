@@ -1,24 +1,28 @@
 @import 'tailwindcss';
 
+/* Define as variáveis de cor para o tema claro */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #ffffff; /* Cor de fundo padrão (branco) */
+  --foreground: #171717; /* Cor do texto padrão (cinza escuro) */
 }
 
+/* Define as variáveis de cor e de fonte que dependem das variáveis primárias */
 :root {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background); /* Alias para a cor de fundo */
+  --color-foreground: var(--foreground); /* Alias para a cor do texto */
+  --font-sans: var(--font-geist-sans); /* Variável para a fonte sem serifa (definida em outro arquivo) */
+  --font-mono: var(--font-geist-mono); /* Variável para a fonte monoespaçada (definida em outro arquivo) */
 }
 
+/* Media query para aplicar estilos quando o esquema de cores preferido do usuário é o modo escuro */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0a0a0a; /* Cor de fundo para o tema escuro (preto) */
+    --foreground: #ededed; /* Cor do texto para o tema escuro (cinza claro) */
   }
 }
 
+/* Define a altura de html e body para ocupar toda a viewport */
 html,
 body {
   height: 100%;
@@ -26,55 +30,62 @@ body {
   padding: 0;
 }
 
+/* Estilos para o elemento com o ID '__next', que geralmente envolve toda a aplicação Next.js */
 #__next {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  display: flex; /* Usa flexbox para organizar os filhos */
+  flex-direction: column; /* Organiza os filhos em coluna */
+  min-height: 100vh; /* Garante que o contêiner ocupe pelo menos a altura da viewport */
 }
 
+/* Estilos para o elemento body */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--background); /* Aplica a cor de fundo definida pelas variáveis */
+  color: var(--foreground); /* Aplica a cor do texto definida pelas variáveis */
+  font-family: Arial, Helvetica, sans-serif; /* Define a família de fontes padrão */
 }
 
+/* Estilos para criar um contêiner circular para imagens */
 .image-circle {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 150px; /* Largura do círculo */
-  height: 150px; /* Altura do círculo */
-  border-radius: 50%; /* Torna o contêiner circular */
-  overflow: hidden; /* Garante que a imagem fique dentro do círculo */
-  background-color: #ccc; /* Cor de fundo opcional */
+  display: flex; /* Usa flexbox para centralizar o conteúdo */
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  width: 150px; /* Define a largura do círculo */
+  height: 150px; /* Define a altura do círculo */
+  border-radius: 50%; /* Cria o formato circular */
+  overflow: hidden; /* Esconde qualquer parte da imagem que ultrapasse o círculo */
+  background-color: #ccc; /* Cor de fundo opcional para o círculo */
 }
 
+/* Estilos para a imagem dentro do círculo */
 .image-circle img {
-  width: 100%; /* Ajusta a largura da imagem ao tamanho do círculo */
-  height: 100%; /* Ajusta a altura da imagem ao tamanho do círculo */
-  object-fit: cover; /* Garante que a imagem preencha o círculo sem distorção */
+  width: 100%; /* Faz a imagem ocupar toda a largura do círculo */
+  height: 100%; /* Faz a imagem ocupar toda a altura do círculo */
+  object-fit: cover; /* Garante que a imagem cubra o círculo sem distorção, cortando se necessário */
 }
 
+/* Estilos para a classe 'content', adicionando margem superior e centralizando o texto */
 .content {
   margin-top: 20px;
   text-align: center;
 }
 
-/* Adicione margens ou espaçamento no Container */
+/* Comentário: Adiciona margens ou espaçamento no Container */
 .container {
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
+/* Definição da animação 'fadeIn' */
 @keyframes fadeIn {
   from {
-    opacity: 0;
+    opacity: 0; /* Começa com opacidade 0 (totalmente transparente) */
   }
   to {
-    opacity: 1;
+    opacity: 1; /* Termina com opacidade 1 (totalmente visível) */
   }
 }
 
+/* Aplica a animação 'fadeIn' a elementos com a classe 'animate-fadeIn' */
 .animate-fadeIn {
-  animation: fadeIn 1s ease-in-out;
+  animation: fadeIn 1s ease-in-out; /* Aplica a animação por 1 segundo, com uma curva de aceleração suave */
 }
