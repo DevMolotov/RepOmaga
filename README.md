@@ -1,11 +1,7 @@
-## Portifólio do Trainee Matheus Pasquevitz Souza
-
-Este foi um portfólio criado por mim enquanto estava no programa de Trainee da EJEM utilizando CSS Tailwind, JavaScript e TypeScript
-Neste portifólio contém informações minhas de contato e alguns projetos que já fiz ou estou fazendo no momento.
-
-Obs* Ainda não está 100% completo irei continuar atualizando após a entrega do Case.
-
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+Portifólio do Trainee Matheus Pasquevitz Souza do setor de tecnologia da EJEM
+para iniciar uma visualização do projeto digite o seguinte comando: npm run dev
 
 ## Getting Started
 
@@ -41,5 +37,4 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-
 Se quiser uma dica use base64
